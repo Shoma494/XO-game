@@ -21,12 +21,12 @@ public class ConsoleInput {
 
             try {
                 dataToInt = Integer.parseInt(data);
-                if (dataToInt>=0&& dataToInt<=8) break;
+                if (dataToInt>=1&& dataToInt<=9) break;
                 else {
-                    System.out.println("Число должно быть от 0 до 8");
+                    System.out.println("Число должно быть от 1 до 9");
                     continue;}
             } catch (NumberFormatException e) {
-                System.out.println("Нам тут не до шуток! Быстро вводи число от 0 до 8!");
+                System.out.println("Нам тут не до шуток! Быстро вводи число от 1 до 9!");
             }
         }
 

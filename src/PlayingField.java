@@ -1,3 +1,6 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class PlayingField {
     public void playingField(String[] str) {
         System.out.printf("|%-1s|%-1s|%-1s|", str[0], str[1], str[2]);
@@ -7,5 +10,11 @@ public class PlayingField {
         System.out.printf("|%-1s|%-1s|%-1s|", str[6], str[7], str[8]);
         System.out.println();
         System.out.println();
+    }
+
+    public String addTimeOfGame () {
+        SimpleDateFormat formatter= new SimpleDateFormat("_yyyyMMdd_HHmmss");
+        Date date = new Date(System.currentTimeMillis());
+        return formatter.format(date);
     }
 }
