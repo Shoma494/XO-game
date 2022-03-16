@@ -10,7 +10,7 @@ public class WriteXmlStAXCursor {
 
     public void createXMLfile(String nameXMLfile, String player1, String player2, ArrayList<String[]> steps, String[] winner) {
 
-        try(FileOutputStream out = new FileOutputStream(nameXMLfile+".xml")){
+        try(FileOutputStream out = new FileOutputStream( "src/"+nameXMLfile+".xml")){
             writeXml(out, player1, player2, steps, winner);
         } catch (IOException | XMLStreamException e) {
             e.printStackTrace();
@@ -66,10 +66,13 @@ public class WriteXmlStAXCursor {
 
         //GameResult
         writer.writeStartElement("GameResult");
-        writer.writeEmptyElement("Player"); //first player
-        writer.writeAttribute("id", winner[0]);
-        writer.writeAttribute("name", winner[1]);
-        writer.writeAttribute("symbol", winner[2]);
+        if (winner[0].equals("Draw!")) writer.writeCharacters("Draw!");
+        else {
+            writer.writeEmptyElement("Player"); //first player
+            writer.writeAttribute("id", winner[0]);
+            writer.writeAttribute("name", winner[1]);
+            writer.writeAttribute("symbol", winner[2]);
+        }
 
         writer.writeEndElement();
         writer.writeCharacters("\n");

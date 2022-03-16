@@ -89,7 +89,7 @@ public class Main {
                 }
                 if (i == moves.length - 1) {
                     System.out.println("Ничья");
-                    String[] win ={"0", "_", "_"};
+                    String[] win ={"Draw!"};
                     winner=win;
                     playingField.playingField(moves);
                     plaer1.drawResult();
