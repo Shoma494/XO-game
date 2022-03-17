@@ -139,10 +139,15 @@ public class Main {
 
         }
         //////////////////////////////////////////////////
+
         consoleInput.readerClose();
 
+        ReadXmlStAXCursorParser readXmlStAXCursorParser = new ReadXmlStAXCursorParser();
+    readXmlStAXCursorParser.readXML("src/"+nameXMLfile+".xml");
 
-    }
+
+
+    }/////
 
 
 }
